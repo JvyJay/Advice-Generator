@@ -3,7 +3,15 @@ import { connect } from 'react-redux';
 import { fetchQuote } from '../actions/index';
 
 const GenerateQuote = props => {
-  const [saved, setSaved] = useState([]);
+  const [icon, setIcon] = useState('heart outline icon');
+
+  const handleClick = () => {
+    if (icon === 'heart outline icon') {
+      setIcon('heart icon');
+    } else {
+      setIcon('heart outline icon');
+    }
+  };
   return (
     <div
       style={{
@@ -26,14 +34,14 @@ const GenerateQuote = props => {
           <button className='ui basic loading button'>Loading</button>
         )}
         {props.quote && !props.isLoading && (
-          <div className='ui centered card'>
+          <div key={props.quote.slip.slip_id} className='ui centered card'>
             <div className='content'>
               <div className='header'>Advice Slip</div>
               <div className='description'>{props.quote.slip.advice}</div>
             </div>
-            <div className='ui bottom attached button'>
-              <i className='heart icon'></i>
-              Save Advice
+            <div onClick={handleClick} className='ui bottom attached button'>
+              <i className={icon}></i>
+              Heart Advice
             </div>
           </div>
         )}

@@ -32,8 +32,6 @@ export const reducer = (state = initialState, action) => {
         isLoading: false,
         error: action.payload
       };
-    // case FAVORITE_QUOTE:
-    //   return {};
     default:
       return state;
   }

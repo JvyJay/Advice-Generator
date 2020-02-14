@@ -17,10 +17,3 @@ export const fetchQuote = () => dispatch => {
       dispatch({ type: FETCH_QUOTE_FAILURE, payload: err.response });
     });
 };
-
-export const addToList = slip => {
-  return {
-    type: ADD_TO_LIST,
-    slip
-  };
-};
