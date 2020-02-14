@@ -1,9 +1,10 @@
 import React from 'react';
+import NavRouter from './components/NavRouter';
 
 const App = () => {
   return (
     <div>
-      <h1>Hello World</h1>
+      <NavRouter />
     </div>
   );
 };
