@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { fetchQuote } from '../actions/index';
 
 const GenerateQuote = props => {
+  // State for heart icon
   const [icon, setIcon] = useState('heart outline icon');
 
+  // Heart icon toggle
   const handleClick = () => {
     if (icon === 'heart outline icon') {
       setIcon('heart icon');
